@@ -1,0 +1,13 @@
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Small screens: search + cart take a full row under the logo */
+@media (max-width: 768px) {
+    .nav-actions {
+        order: 2;
+        width: 100%;
+    }
+}
