@@ -1,11 +1,11 @@
-import './App.css';
+import Header from "./components/header/Header";
 
-function App() {
-  return <div>
-    <h1>Hello World</h1>
-   <p>Welcome to Cola Clothes!</p>
-   </div>;
-  
-}
+const App = () => {
+    return (
+        <>
+            <Header />
+        </>
+    );
+};
 
 export default App;
