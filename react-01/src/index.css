@@ -1,0 +1,60 @@
+/* Colors */
+:root {
+    --color-bg-page: #f7f3ea;
+    --color-bg-navbar: #fff8f0;
+    --color-border-navbar: #e7dccf;
+    --color-primary-green: #1c3a0a;
+    --color-accent-orange: #c4521a;
+    --color-text-placeholder: #9c948a;
+    --color-icon-border: #8a9e72;
+    --color-white: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Geist", Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg-page);
+    color: var(--color-primary-green);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+/* Generic columns: side by side, stacked on small screens */
+.columns {
+    display: flex;
+    gap: 24px;
+}
+
+.columns > * {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column;
+    }
+}
