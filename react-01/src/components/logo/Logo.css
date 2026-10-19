@@ -1,0 +1,23 @@
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo .logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.logo .logo-text {
+    font-weight: 800;
+    font-size: 20px;
+}
