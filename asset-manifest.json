@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/colaclothes/static/css/main.6a74f6d1.css",
+    "main.js": "/colaclothes/static/js/main.0b35887f.js",
+    "index.html": "/colaclothes/index.html",
+    "main.6a74f6d1.css.map": "/colaclothes/static/css/main.6a74f6d1.css.map",
+    "main.0b35887f.js.map": "/colaclothes/static/js/main.0b35887f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a74f6d1.css",
+    "static/js/main.0b35887f.js"
+  ]
+}
