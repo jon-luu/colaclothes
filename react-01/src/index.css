@@ -2,18 +2,35 @@
 :root {
     --color-bg-page: #f7f3ea;
     --color-bg-navbar: #fff8f0;
+    --color-bg-band: #f4efe6;
+    --color-bg-summary: #f0e6d2;
+    --color-bg-card-light: #fffdf8;
     --color-border-navbar: #e7dccf;
+    --color-border-card: #ddd5c7;
+    --color-border-chip: #d1d5db;
     --color-primary-green: #1c3a0a;
+    --color-cta-green: #2d5016;
+    --color-sage-green: #6b8e5a;
+    --color-badge-green: #ebf5ee;
     --color-accent-orange: #c4521a;
+    --color-earth-brown: #8a5a2b;
+    --color-text-muted: #4a5240;
     --color-text-placeholder: #9c948a;
     --color-icon-border: #8a9e72;
+    --color-badge-bg: #ede8dc;
+    --color-cta-text: #f5f0e8;
     --color-white: #ffffff;
+    --color-shadow: #00000014;
+    --color-focus: #4a90e2;
+    --color-hero-overlay: rgba(28, 58, 10, 0.28);
 }
 
 /* Reset */
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    font: inherit;
     box-sizing: border-box;
 }
 
@@ -22,6 +39,17 @@ body {
     background-color: var(--color-bg-page);
     color: var(--color-primary-green);
     -webkit-font-smoothing: antialiased;
+}
+
+/* header on top, footer pushed to the bottom on short pages */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 img {
@@ -34,13 +62,22 @@ a {
     text-decoration: none;
 }
 
-ul {
+ul,
+ol {
     list-style: none;
 }
 
-input,
-button {
-    font: inherit;
+button:focus-visible {
+    outline: 2px solid var(--color-focus);
+}
+
+/* hides a label visually but keeps it for screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
 
 /* Generic columns: side by side, stacked on small screens */
