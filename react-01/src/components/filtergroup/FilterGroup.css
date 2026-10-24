@@ -1,0 +1,48 @@
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group + .filter-group {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-card);
+}
+
+.filter-group .filter-title {
+    font-weight: 700;
+    color: var(--color-primary-green);
+    font-size: 16px;
+}
+
+.filter-group .filter-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group .filter-link {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.filter-group .filter-link--active {
+    font-weight: 600;
+    color: var(--color-accent-orange);
+}
+
+.filter-group .filter-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-group .filter-option input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary-green);
+}
