@@ -1,0 +1,89 @@
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 160px;
+}
+
+.step .step-icon-wrap {
+    position: relative;
+    display: flex;
+    width: 72px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-badge-bg);
+    border-radius: 36px;
+    border: 2px solid var(--color-white);
+    box-shadow: 0px 4px 12px var(--color-shadow);
+}
+
+.step .step-icon {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.step .step-icon img {
+    width: 26px;
+    height: 26px;
+}
+
+.step .step-number {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: var(--color-primary-green);
+    border-radius: 12px;
+    font-family: "Outfit", Helvetica;
+    font-weight: 800;
+    font-size: 11px;
+    color: var(--color-white);
+}
+
+.step .step-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.step .step-title {
+    font-family: "Outfit", Helvetica;
+    font-weight: 700;
+    color: var(--color-white);
+    font-size: 20px;
+    text-align: center;
+}
+
+.step .step-desc {
+    font-family: "Outfit", Helvetica;
+    color: var(--color-white);
+    font-size: 14px;
+    text-align: center;
+    line-height: 22.4px;
+}
+
+@media (max-width: 1024px) {
+    .step {
+        min-width: calc(50% - 16px);
+        flex: 1 1 calc(50% - 16px);
+    }
+}
+
+@media (max-width: 480px) {
+    .step {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+}
