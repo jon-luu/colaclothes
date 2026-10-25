@@ -1,0 +1,207 @@
+.contact-page .section--contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 64px 80px;
+}
+
+.contact-page .section-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.contact-page .section-title {
+    font-weight: 700;
+    color: var(--color-primary-green);
+    font-size: 32px;
+}
+
+.contact-page .section-subtitle {
+    max-width: 540px;
+    color: var(--color-text-muted);
+    font-size: 16px;
+}
+
+.contact-page .contact-layout {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.contact-page .contact-form,
+.contact-page .contact-map {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-card);
+    border-radius: 8px;
+}
+
+.contact-page .form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-page .form-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* only fields inside a row share the width; stacked fields keep their natural height */
+.contact-page .contact-form > .form-field {
+    flex: none;
+}
+
+.contact-page .form-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-primary-green);
+}
+
+.contact-page .form-input {
+    width: 100%;
+    padding: 11px 12px;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    border: 1px solid var(--color-border-card);
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.contact-page .form-input::placeholder {
+    color: var(--color-text-placeholder);
+    opacity: 1;
+}
+
+.contact-page .form-input:focus {
+    outline: 2px solid var(--color-focus);
+}
+
+.contact-page textarea.form-input {
+    resize: vertical;
+}
+
+.contact-page .contact-button {
+    align-self: flex-start;
+    padding: 12px 28px;
+    background-color: var(--color-accent-orange);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-page .contact-button:hover {
+    opacity: 0.9;
+}
+
+.contact-page .form-result {
+    min-height: 44px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.contact-page .form-result.show {
+    opacity: 1;
+}
+
+.contact-page .form-result.sending {
+    background-color: var(--color-badge-bg);
+    color: var(--color-text-muted);
+}
+
+.contact-page .form-result.success {
+    background-color: var(--color-badge-green);
+    color: var(--color-cta-green);
+}
+
+.contact-page .form-result.error {
+    background-color: #fbe9e2;
+    color: var(--color-accent-orange);
+}
+
+.contact-page .map-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-primary-green);
+}
+
+.contact-page .map-desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.contact-page .map-frame {
+    width: 100%;
+    flex: 1;
+    min-height: 320px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .contact-page .section--contact {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .contact-page .contact-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page .section--contact {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .contact-page .section--contact {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .contact-page .contact-form,
+    .contact-page .contact-map {
+        padding: 24px;
+    }
+
+    .contact-page .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page .section--contact {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .contact-page .section-title {
+        font-size: 26px;
+    }
+
+    .contact-page .contact-form,
+    .contact-page .contact-map {
+        padding: 20px;
+    }
+
+    .contact-page .contact-button {
+        width: 100%;
+    }
+
+    .contact-page .map-frame {
+        min-height: 260px;
+    }
+}

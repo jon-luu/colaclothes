@@ -1,0 +1,518 @@
+.home-page .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 80px;
+    background-color: var(--color-bg-page);
+    width: 100%;
+}
+
+.home-page .hero-banner-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.home-page .hero-banner {
+    height: 460px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.home-page .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-hero-overlay);
+    border-radius: inherit;
+}
+
+.home-page .hero-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    padding: 40px 48px;
+}
+
+.home-page .hero-title {
+    font-weight: 800;
+    color: var(--color-white);
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.home-page .hero-subhead {
+    color: var(--color-white);
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 480px;
+}
+
+.home-page .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.home-page .hero-btn-primary,
+.home-page .hero-btn-secondary {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.home-page .hero-btn-primary {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border: 1px solid var(--color-primary-green);
+}
+
+.home-page .hero-btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary-green);
+    border: 1px solid var(--color-white);
+}
+
+.home-page .section--featured {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 80px 64px;
+    width: 100%;
+}
+
+.home-page .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home-page .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.home-page .section-title {
+    font-weight: 700;
+    color: var(--color-primary-green);
+    font-size: 28px;
+}
+
+.home-page .section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 16px;
+}
+
+.home-page .view-all-link {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.home-page .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+/* the home page's cards keep product names to one line */
+.home-page .product-card .product-name {
+    min-height: 0;
+    -webkit-line-clamp: 1;
+}
+
+.home-page .section--how-it-works {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 80px;
+    padding: 80px;
+    background-color: var(--color-accent-orange);
+    border-radius: 16px;
+}
+
+.home-page .section-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.home-page .eyebrow-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.home-page .flourish {
+    width: 14px;
+    height: 14px;
+    filter: brightness(0) invert(1);
+}
+
+.home-page .eyebrow {
+    font-family: "Outfit", Helvetica;
+    font-weight: 600;
+    color: var(--color-white);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.home-page .how-it-works-title {
+    width: 100%;
+    max-width: 640px;
+    font-family: "Outfit", Helvetica;
+    font-weight: 800;
+    color: var(--color-white);
+    font-size: 44px;
+    text-align: center;
+    line-height: 48.4px;
+}
+
+.home-page .how-it-works-subtitle {
+    width: 100%;
+    max-width: 520px;
+    font-family: "Outfit", Helvetica;
+    color: var(--color-white);
+    font-size: 17px;
+    text-align: center;
+    line-height: 27.2px;
+}
+
+.home-page .steps-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+}
+
+.home-page .cta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px 32px;
+    width: 100%;
+    background-color: var(--color-primary-green);
+    border-radius: 12px;
+}
+
+.home-page .cta-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.home-page .cta-text {
+    font-family: "Outfit", Helvetica;
+    font-weight: 600;
+    color: var(--color-cta-text);
+    font-size: 16px;
+}
+
+.home-page .cta-button {
+    display: inline-flex;
+    padding: 10px 24px;
+    background-color: var(--color-accent-orange);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Outfit", Helvetica;
+    font-weight: 700;
+    color: var(--color-white);
+    font-size: 15px;
+}
+
+.home-page .section--brands {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 64px 80px;
+    width: 100%;
+}
+
+.home-page .brand-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.home-page .section--newsletter {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px 80px;
+    width: 100%;
+}
+
+.home-page .newsletter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 48px;
+    width: 100%;
+    background-color: var(--color-bg-page);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-card);
+}
+
+.home-page .newsletter-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.home-page .newsletter-title {
+    font-weight: 800;
+    color: var(--color-primary-green);
+    font-size: 24px;
+    text-align: center;
+}
+
+.home-page .newsletter-desc {
+    width: 100%;
+    max-width: 500px;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    text-align: center;
+}
+
+.home-page .newsletter-form {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 480px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.home-page .newsletter-input-wrap {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    flex: 1;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    border: 1px solid var(--color-text-placeholder);
+}
+
+.home-page .newsletter-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.home-page .newsletter-input::placeholder {
+    color: var(--color-text-placeholder);
+    opacity: 1;
+}
+
+.home-page .newsletter-button {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: var(--color-primary-green);
+    border-radius: 4px;
+    border: 1px solid var(--color-primary-green);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-white);
+    font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+    .home-page .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-page .section--how-it-works {
+        margin-left: 48px;
+        margin-right: 48px;
+    }
+
+    .home-page .hero,
+    .home-page .section--featured,
+    .home-page .section--how-it-works,
+    .home-page .section--brands,
+    .home-page .section--newsletter {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .home-page .hero-banner-wrap {
+        min-height: 380px;
+    }
+
+    .home-page .hero-banner {
+        height: 380px;
+    }
+
+    .home-page .hero-title {
+        font-size: 32px;
+    }
+
+    .home-page .how-it-works-title {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-page .section--how-it-works {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .home-page .hero,
+    .home-page .section--featured,
+    .home-page .section--how-it-works,
+    .home-page .section--brands,
+    .home-page .section--newsletter {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .home-page .hero {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .home-page .hero-banner-wrap {
+        min-height: 340px;
+    }
+
+    .home-page .hero-banner {
+        height: 340px;
+    }
+
+    .home-page .hero-content {
+        padding: 24px;
+        gap: 12px;
+    }
+
+    .home-page .hero-title {
+        font-size: 26px;
+    }
+
+    .home-page .hero-subhead {
+        font-size: 14px;
+    }
+
+    .home-page .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .home-page .how-it-works-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .home-page .how-it-works-subtitle {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .home-page .section--how-it-works {
+        padding-top: 56px;
+        padding-bottom: 56px;
+        gap: 32px;
+    }
+
+    .home-page .newsletter-card {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-page .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .section--how-it-works {
+        margin-left: 16px;
+        margin-right: 16px;
+        border-radius: 12px;
+    }
+
+    .home-page .hero,
+    .home-page .section--featured,
+    .home-page .section--how-it-works,
+    .home-page .section--brands,
+    .home-page .section--newsletter {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .home-page .hero-banner-wrap {
+        min-height: 360px;
+    }
+
+    .home-page .hero-banner {
+        height: 360px;
+    }
+
+    .home-page .hero-content {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .home-page .hero-title {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .home-page .hero-buttons {
+        width: 100%;
+    }
+
+    .home-page .hero-btn-primary,
+    .home-page .hero-btn-secondary {
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 10px 16px;
+    }
+
+    .home-page .how-it-works-title {
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .home-page .cta-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .home-page .newsletter-form {
+        flex-direction: column;
+    }
+
+    .home-page .newsletter-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
