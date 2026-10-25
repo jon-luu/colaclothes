@@ -1,12 +1,13 @@
 import "./CartButton.css";
+import { Link } from "react-router-dom";
 import cartIcon from "../../images/icon-cart.png";
 
 const CartButton = ({ count }) => {
     return (
-        <a className="cart-button" href="#cart" aria-label={`Cart, ${count} items`}>
+        <Link className="cart-button" to="/checkout" aria-label={`Cart, ${count} items`}>
             <img src={cartIcon} alt="" />
             <span className="cart-count">{count}</span>
-        </a>
+        </Link>
     );
 };
 
