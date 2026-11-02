@@ -9,9 +9,10 @@ const links = [
     { label: "About Us", to: "/about" },
 ];
 
-const Navigation = () => {
+// isOpen comes from the Header's toggle button (only matters on small screens)
+const Navigation = ({ isOpen }) => {
     return (
-        <nav id="main-nav" className="navigation">
+        <nav id="main-nav" className={isOpen ? "navigation open" : "navigation"}>
             <ul>
                 {links.map((link) => (
                     <NavItem key={link.label} label={link.label} to={link.to} />
