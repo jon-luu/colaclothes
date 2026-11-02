@@ -1,5 +1,36 @@
 // Repeated content for the other pages (steps, brands, values, tips, cart items...)
 
+// slides for the home page slideshow
+export const heroSlides = [
+    {
+        id: 1,
+        img: "images/home/hero-banner.png",
+        alt: "Hiker on a misty mountain ridge at sunrise",
+        title: "Gear for the next trail, not the landfill",
+        subhead: "Shop tested trail apparel, camping gear, and outdoor equipment from local adventurers and verified sellers.",
+        primary: { label: "Shop Now", to: "/shop" },
+        secondary: { label: "Start Selling", to: "/sell" },
+    },
+    {
+        id: 2,
+        img: "images/gear/gear-flatlay.jpg",
+        alt: "Backpack, sleeping bag, trekking poles, and camp stove laid out on a wooden table",
+        title: "Pack out for less",
+        subhead: "Tents, packs, sleeping bags, and stoves - inspected, photographed, and ready for your next overnight.",
+        primary: { label: "Browse Gear", to: "/gear" },
+        secondary: { label: "Shop Apparel", to: "/apparel" },
+    },
+    {
+        id: 3,
+        img: "images/about/community-meetup.jpg",
+        alt: "Local hikers and climbers swapping gear around a picnic table in the woods",
+        title: "Built by Columbia's outdoor community",
+        subhead: "Gear swaps, repair workshops, and trail meetups that keep good gear moving between local adventurers.",
+        primary: { label: "Our Story", to: "/about" },
+        secondary: { label: "Get in Touch", to: "/contact" },
+    },
+];
+
 export const homeSteps = [
     { id: 1, number: "01", icon: "images/icons/icon-list.png", title: "List Your Gear", desc: "Snap photos, write a quick description, and set your asking price in minutes" },
     { id: 2, number: "02", icon: "images/icons/icon-pin.png", title: "Meet on the Trail", desc: "Choose a local handoff spot or ship nationwide - whatever works for your adventure schedule" },

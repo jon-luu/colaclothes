@@ -1,0 +1,18 @@
+.slide-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.slide-dot:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* the current dot stretches into a pill */
+.slide-dot.active {
+    width: 28px;
+    background-color: var(--color-white);
+}

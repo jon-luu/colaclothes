@@ -1,31 +1,22 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
-import ProductCard from "../../components/productcard/ProductCard";
+import Slideshow from "../../components/slideshow/Slideshow";
+import ProductGrid from "../../components/productgrid/ProductGrid";
+import NewsletterForm from "../../components/newsletterform/NewsletterForm";
 import Step from "../../components/step/Step";
 import BrandChip from "../../components/brandchip/BrandChip";
 import { featuredProducts } from "../../data/products";
-import { homeSteps, brands } from "../../data/content";
+import { heroSlides, homeSteps, brands } from "../../data/content";
 
 const img = (path) => `${process.env.PUBLIC_URL}/images/${path}`;
 
 const Home = () => {
     return (
         <main className="home-page">
-            {/* Hero */}
+            {/* Hero slideshow (Part 10 - coded from scratch, see components/slideshow) */}
             <section className="hero">
-                <div className="hero-banner-wrap">
-                    <img className="hero-banner" src={img("home/hero-banner.png")} alt="Hiker on a misty mountain ridge at sunrise" />
-                    <div className="hero-overlay"></div>
-
-                    <div className="hero-content">
-                        <h1 className="hero-title">Gear for the next trail, not the landfill</h1>
-                        <p className="hero-subhead">Shop tested trail apparel, camping gear, and outdoor equipment from local adventurers and verified sellers.</p>
-                        <div className="hero-buttons">
-                            <Link className="hero-btn-primary" to="/shop">Shop Now</Link>
-                            <Link className="hero-btn-secondary" to="/sell">Start Selling</Link>
-                        </div>
-                    </div>
-                </div>
+                <h1 className="visually-hidden">Cola Clothes - secondhand outdoor gear in Columbia, SC</h1>
+                <Slideshow slides={heroSlides} />
             </section>
 
             {/* Featured Products */}
@@ -38,11 +29,7 @@ const Home = () => {
                     <Link className="view-all-link" to="/shop">View All Listings</Link>
                 </div>
 
-                <div className="product-grid">
-                    {featuredProducts.map((product) => (
-                        <ProductCard key={product.id} {...product} />
-                    ))}
-                </div>
+                <ProductGrid products={featuredProducts} quickView={false} />
             </section>
 
             {/* How It Works */}
@@ -92,12 +79,7 @@ const Home = () => {
                         <p className="newsletter-desc">Subscribe for fresh gear drops, trail-tested gear reviews, and updates on high-demand outdoor brands.</p>
                     </div>
 
-                    <form className="newsletter-form">
-                        <div className="newsletter-input-wrap">
-                            <input className="newsletter-input" type="email" placeholder="Enter your email address" aria-label="Email address" required />
-                        </div>
-                        <button className="newsletter-button" type="submit">Subscribe</button>
-                    </form>
+                    <NewsletterForm />
                 </div>
             </section>
         </main>
