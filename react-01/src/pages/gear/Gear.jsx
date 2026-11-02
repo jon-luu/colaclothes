@@ -2,7 +2,7 @@ import "./Gear.css";
 import { Link } from "react-router-dom";
 import PageBanner from "../../components/pagebanner/PageBanner";
 import CategoryPill from "../../components/categorypill/CategoryPill";
-import ProductCard from "../../components/productcard/ProductCard";
+import ProductGrid from "../../components/productgrid/ProductGrid";
 import { gearProducts } from "../../data/products";
 import { gearCategories } from "../../data/content";
 
@@ -42,11 +42,7 @@ const Gear = () => {
                     <p className="results-count">{gearProducts.length} Items Found</p>
                 </div>
 
-                <div className="product-grid">
-                    {gearProducts.map((product) => (
-                        <ProductCard key={product.id} {...product} />
-                    ))}
-                </div>
+                <ProductGrid products={gearProducts} />
             </section>
         </main>
     );

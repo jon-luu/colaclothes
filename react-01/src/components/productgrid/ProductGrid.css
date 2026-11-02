@@ -1,0 +1,14 @@
+/* lightbox caption text uses the site font */
+.yarl__slide_title {
+    font-family: "Geist", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.yarl__slide_description {
+    font-family: "Geist", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.yarl__slide_captions_container {
+    background-color: rgba(20, 32, 10, 0.6);
+}

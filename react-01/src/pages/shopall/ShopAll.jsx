@@ -1,7 +1,7 @@
 import "./ShopAll.css";
 import PageBanner from "../../components/pagebanner/PageBanner";
 import FilterGroup from "../../components/filtergroup/FilterGroup";
-import ProductCard from "../../components/productcard/ProductCard";
+import ProductGrid from "../../components/productgrid/ProductGrid";
 import { shopAllProducts } from "../../data/products";
 import { shopFilters } from "../../data/content";
 
@@ -38,11 +38,7 @@ const ShopAll = () => {
                         </div>
                     </div>
 
-                    <div className="product-grid">
-                        {shopAllProducts.map((product) => (
-                            <ProductCard key={product.id} {...product} />
-                        ))}
-                    </div>
+                    <ProductGrid products={shopAllProducts} />
 
                     <div className="load-more">
                         <a className="load-more-button" href="#listings">Load More Items</a>

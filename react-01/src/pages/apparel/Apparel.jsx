@@ -1,7 +1,7 @@
 import "./Apparel.css";
 import PageBanner from "../../components/pagebanner/PageBanner";
 import CategoryPill from "../../components/categorypill/CategoryPill";
-import ProductCard from "../../components/productcard/ProductCard";
+import ProductGrid from "../../components/productgrid/ProductGrid";
 import { apparelProducts } from "../../data/products";
 import { apparelCategories } from "../../data/content";
 
@@ -22,11 +22,7 @@ const Apparel = () => {
                     <p className="results-count">{apparelProducts.length} Items Found</p>
                 </div>
 
-                <div className="product-grid">
-                    {apparelProducts.map((product) => (
-                        <ProductCard key={product.id} {...product} />
-                    ))}
-                </div>
+                <ProductGrid products={apparelProducts} />
             </section>
         </main>
     );
