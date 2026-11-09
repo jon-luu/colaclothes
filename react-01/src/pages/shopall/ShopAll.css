@@ -77,27 +77,6 @@
     width: 100%;
 }
 
-.shop-page .load-more {
-    display: flex;
-    justify-content: center;
-    padding-top: 16px;
-}
-
-.shop-page .load-more-button {
-    padding: 12px 32px;
-    border-radius: 6px;
-    border: 1px solid var(--color-primary-green);
-    font-weight: 600;
-    color: var(--color-primary-green);
-    font-size: 14px;
-    transition: background-color 0.15s ease;
-}
-
-.shop-page .load-more-button:hover {
-    background-color: var(--color-primary-green);
-    color: var(--color-white);
-}
-
 @media (max-width: 1024px) {
     .shop-page .section--shop {
         padding-left: 48px;

@@ -1,6 +1,8 @@
 import "./ProductGrid.css";
 import { useState } from "react";
 import ProductCard from "../productcard/ProductCard";
+import ProductSkeleton from "../productskeleton/ProductSkeleton";
+import ProductError from "../producterror/ProductError";
 
 // PART 10 FEATURE: React library #2 - Yet Another React Lightbox
 // clicking a product photo opens it full screen; arrows / swipe move through the rest of the grid,
@@ -11,18 +13,34 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-// quickView={false} turns the lightbox off (the home page photos are too small for it)
-const ProductGrid = ({ products, quickView = true }) => {
+// products come from the server (see hooks/useProducts.js)
+// loading -> gray placeholder cards, error -> message with a Try Again button
+// quickView={false} turns the lightbox off
+const ProductGrid = ({ products, loading = false, error = false, onRetry, skeletonCount = 8, quickView = true }) => {
     // -1 means the lightbox is closed
     const [index, setIndex] = useState(-1);
 
     // the lightbox wants a list of slides with src / title / description
     const slides = products.map((product) => ({
-        src: `${process.env.PUBLIC_URL}/${product.img}`,
+        src: product.img,
         alt: product.name,
         title: product.name,
         description: `${product.brand} · ${product.price} · ${product.size}${product.condition ? " · " + product.condition : ""}`,
     }));
+
+    if (error) {
+        return <ProductError onRetry={onRetry} />;
+    }
+
+    if (loading) {
+        return (
+            <div className="product-grid" aria-busy="true" aria-label="Loading listings">
+                {Array.from({ length: skeletonCount }, (_, i) => (
+                    <ProductSkeleton key={i} />
+                ))}
+            </div>
+        );
+    }
 
     return (
         <>

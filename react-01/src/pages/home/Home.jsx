@@ -5,12 +5,15 @@ import ProductGrid from "../../components/productgrid/ProductGrid";
 import NewsletterForm from "../../components/newsletterform/NewsletterForm";
 import Step from "../../components/step/Step";
 import BrandChip from "../../components/brandchip/BrandChip";
-import { featuredProducts } from "../../data/products";
+import useProducts from "../../hooks/useProducts";
 import { heroSlides, homeSteps, brands } from "../../data/content";
 
 const img = (path) => `${process.env.PUBLIC_URL}/images/${path}`;
 
 const Home = () => {
+    // PART 12: featured products come from the server
+    const { products: featuredProducts, loading, error, retry } = useProducts("?featured=true");
+
     return (
         <main className="home-page">
             {/* Hero slideshow (Part 10 - coded from scratch, see components/slideshow) */}
@@ -29,7 +32,7 @@ const Home = () => {
                     <Link className="view-all-link" to="/shop">View All Listings</Link>
                 </div>
 
-                <ProductGrid products={featuredProducts} quickView={false} />
+                <ProductGrid products={featuredProducts} loading={loading} error={error} onRetry={retry} skeletonCount={4} />
             </section>
 
             {/* How It Works */}

@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import PageBanner from "../../components/pagebanner/PageBanner";
 import CategoryPill from "../../components/categorypill/CategoryPill";
 import ProductGrid from "../../components/productgrid/ProductGrid";
-import { gearProducts } from "../../data/products";
+import useProducts from "../../hooks/useProducts";
 import { gearCategories } from "../../data/content";
 
 const Gear = () => {
+    // PART 12: gear listings come from the server
+    const { products: gearProducts, loading, error, retry } = useProducts("?category=gear");
+
     return (
         <main className="gear-page">
             <PageBanner title="Gear & Equipment" subtitle="Backpacks, tents, sleeping bags, and camp equipment for your next trip" />
@@ -39,10 +42,10 @@ const Gear = () => {
             <section className="section--listings" id="listings">
                 <div className="listings-bar">
                     <h2 className="listings-title">Active Listings</h2>
-                    <p className="results-count">{gearProducts.length} Items Found</p>
+                    <p className="results-count">{loading ? "Loading listings..." : error ? "Listings unavailable" : `${gearProducts.length} Items Found`}</p>
                 </div>
 
-                <ProductGrid products={gearProducts} />
+                <ProductGrid products={gearProducts} loading={loading} error={error} onRetry={retry} />
             </section>
         </main>
     );

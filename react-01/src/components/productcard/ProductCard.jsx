@@ -2,7 +2,8 @@ import "./ProductCard.css";
 
 // onImageClick opens the photo in the lightbox (see ProductGrid) - without it the photo is just an image
 const ProductCard = ({ name, brand, price, size, condition, img, onImageClick }) => {
-    const src = `${process.env.PUBLIC_URL}/${img}`;
+    // img is the full photo URL on the server
+    const src = img;
 
     return (
         <article className="product-card">

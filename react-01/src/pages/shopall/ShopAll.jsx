@@ -1,11 +1,21 @@
 import "./ShopAll.css";
+import { useState } from "react";
 import PageBanner from "../../components/pagebanner/PageBanner";
 import FilterGroup from "../../components/filtergroup/FilterGroup";
 import ProductGrid from "../../components/productgrid/ProductGrid";
-import { shopAllProducts } from "../../data/products";
+import useProducts from "../../hooks/useProducts";
 import { shopFilters } from "../../data/content";
 
 const ShopAll = () => {
+    // PART 12: every listing comes from the server on Render
+    const { products, loading, error, retry } = useProducts();
+    const [sort, setSort] = useState("recent");
+
+    // sort a copy so the original list stays in server order ("Most Recent")
+    const sortedProducts = [...products];
+    if (sort === "low") sortedProducts.sort((a, b) => a.priceValue - b.priceValue);
+    if (sort === "high") sortedProducts.sort((a, b) => b.priceValue - a.priceValue);
+
     return (
         <main className="shop-page">
             <PageBanner
@@ -27,22 +37,18 @@ const ShopAll = () => {
                 {/* Listings */}
                 <div className="listings" id="listings">
                     <div className="listings-bar">
-                        <p className="results-count">Showing 1 - 8 of 132 results</p>
+                        <p className="results-count">{loading ? "Loading listings..." : error ? "Listings unavailable" : `Showing ${products.length} results`}</p>
                         <div className="sort">
                             <label className="sort-label" htmlFor="sort-select">Sort by:</label>
-                            <select className="sort-select" id="sort-select">
-                                <option>Most Recent</option>
-                                <option>Price: Low to High</option>
-                                <option>Price: High to Low</option>
+                            <select className="sort-select" id="sort-select" value={sort} onChange={(e) => setSort(e.target.value)}>
+                                <option value="recent">Most Recent</option>
+                                <option value="low">Price: Low to High</option>
+                                <option value="high">Price: High to Low</option>
                             </select>
                         </div>
                     </div>
 
-                    <ProductGrid products={shopAllProducts} />
-
-                    <div className="load-more">
-                        <a className="load-more-button" href="#listings">Load More Items</a>
-                    </div>
+                    <ProductGrid products={sortedProducts} loading={loading} error={error} onRetry={retry} />
                 </div>
             </section>
         </main>
