@@ -1,0 +1,39 @@
+.product-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 48px 24px;
+    border: 1px dashed var(--color-border-card);
+    border-radius: 12px;
+    background-color: var(--color-bg-card-light);
+    text-align: center;
+}
+
+.product-error .error-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-primary-green);
+}
+
+.product-error .error-desc {
+    max-width: 420px;
+    font-size: 15px;
+    color: var(--color-text-muted);
+}
+
+.product-error .error-button {
+    margin-top: 6px;
+    padding: 10px 24px;
+    border-radius: 6px;
+    background-color: var(--color-cta-green);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.product-error .error-button:hover {
+    opacity: 0.9;
+}

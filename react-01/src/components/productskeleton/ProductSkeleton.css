@@ -1,0 +1,54 @@
+.product-skeleton {
+    overflow: hidden;
+    border: 1px solid var(--color-border-card);
+    border-radius: 8px;
+    background-color: var(--color-white);
+}
+
+.product-skeleton .skeleton-image,
+.product-skeleton .skeleton-line {
+    background: linear-gradient(90deg, var(--color-badge-bg) 0%, var(--color-bg-band) 50%, var(--color-badge-bg) 100%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.product-skeleton .skeleton-image {
+    height: 220px;
+}
+
+.product-skeleton .skeleton-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+}
+
+.product-skeleton .skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+}
+
+.product-skeleton .skeleton-line--title {
+    width: 80%;
+    height: 14px;
+}
+
+.product-skeleton .skeleton-line--short {
+    width: 45%;
+}
+
+.product-skeleton .skeleton-line--price {
+    width: 30%;
+    height: 16px;
+    margin-top: 6px;
+}
+
+@keyframes skeleton-shimmer {
+    from {
+        background-position: 100% 0;
+    }
+
+    to {
+        background-position: -100% 0;
+    }
+}
