@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/colaclothes/static/css/main.d12b4c14.css",
-    "main.js": "/colaclothes/static/js/main.710c2679.js",
+    "main.css": "/colaclothes/static/css/main.26dd63af.css",
+    "main.js": "/colaclothes/static/js/main.870ba90f.js",
     "index.html": "/colaclothes/index.html",
-    "main.d12b4c14.css.map": "/colaclothes/static/css/main.d12b4c14.css.map",
-    "main.710c2679.js.map": "/colaclothes/static/js/main.710c2679.js.map"
+    "main.26dd63af.css.map": "/colaclothes/static/css/main.26dd63af.css.map",
+    "main.870ba90f.js.map": "/colaclothes/static/js/main.870ba90f.js.map"
   },
   "entrypoints": [
-    "static/css/main.d12b4c14.css",
-    "static/js/main.710c2679.js"
+    "static/css/main.26dd63af.css",
+    "static/js/main.870ba90f.js"
   ]
 }
