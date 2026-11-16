@@ -1,0 +1,189 @@
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.photo-upload .upload-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.photo-upload .upload-title {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.photo-upload .upload-desc {
+    color: var(--color-text-muted);
+    font-size: 13px;
+}
+
+/* empty state: dashed drop zone */
+.photo-upload .upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 200px;
+    padding: 24px;
+    background-color: var(--color-bg-band);
+    border-radius: 8px;
+    border: 2px dashed var(--color-border-card);
+    text-align: center;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.photo-upload .upload-box.is-dragging {
+    border-color: var(--color-sage-green);
+    background-color: var(--color-badge-green);
+}
+
+.photo-upload .upload-box.has-error {
+    border-color: #d92d20;
+    background-color: #fffbfa;
+}
+
+.photo-upload .upload-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 6px;
+    color: var(--color-icon-border);
+}
+
+.photo-upload .upload-text {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.photo-upload .upload-hint {
+    color: var(--color-text-placeholder);
+    font-size: 12px;
+}
+
+.photo-upload .upload-button {
+    margin-top: 10px;
+    padding: 7px 16px;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    border: 1px solid var(--color-border-card);
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.photo-upload .upload-button:hover {
+    border-color: var(--color-primary-green);
+}
+
+/* the real file input is hidden; the labels open it */
+.photo-upload .upload-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* show a focus ring on the button when keyboard users tab to the hidden input */
+.photo-upload:has(.upload-input:focus-visible) .upload-button {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+/* chosen photo: small fixed-size preview so big photos never blow up the layout */
+.photo-upload .upload-preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    border: 1px solid var(--color-border-card);
+}
+
+.photo-upload .preview-image {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: var(--color-badge-bg);
+}
+
+.photo-upload .preview-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.photo-upload .preview-name {
+    overflow: hidden;
+    color: var(--color-primary-green);
+    font-weight: 600;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.photo-upload .preview-size {
+    color: var(--color-text-placeholder);
+    font-size: 12px;
+}
+
+.photo-upload .preview-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.photo-upload .preview-remove {
+    margin-top: 10px;
+    padding: 0;
+    background: none;
+    color: #b42318;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.photo-upload .preview-remove:hover {
+    text-decoration: underline;
+}
+
+.photo-upload .upload-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #b42318;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.photo-upload .upload-error::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #b42318;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 11px;
+}
+
+@media (max-width: 480px) {
+    .photo-upload .preview-image {
+        flex-basis: 88px;
+        width: 88px;
+        height: 88px;
+    }
+}

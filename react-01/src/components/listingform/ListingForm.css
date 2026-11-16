@@ -1,0 +1,212 @@
+.listing-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    flex: 1;
+    min-width: 0;
+    padding: 32px;
+    background-color: var(--color-bg-card-light);
+    border-radius: 12px;
+    border: 1px solid var(--color-border-card);
+}
+
+.listing-form .form-head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.listing-form .form-title {
+    font-weight: 700;
+    color: var(--color-primary-green);
+    font-size: 24px;
+}
+
+.listing-form .form-desc {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.listing-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.listing-form .form-row--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.listing-form .form-input,
+.listing-form .form-select,
+.listing-form .form-textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-white);
+    border-radius: 6px;
+    border: 1px solid var(--color-border-card);
+    color: var(--color-primary-green);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.listing-form .form-input:focus,
+.listing-form .form-select:focus,
+.listing-form .form-textarea:focus {
+    border-color: var(--color-sage-green);
+    outline: 2px solid var(--color-badge-green);
+}
+
+.listing-form .form-input::placeholder,
+.listing-form .form-textarea::placeholder {
+    color: var(--color-text-placeholder);
+    opacity: 1;
+}
+
+.listing-form .form-select {
+    cursor: pointer;
+}
+
+.listing-form .form-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.listing-form .price-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 12px;
+    background-color: var(--color-white);
+    border-radius: 6px;
+    border: 1px solid var(--color-border-card);
+}
+
+.listing-form .price-input-wrap:focus-within {
+    border-color: var(--color-sage-green);
+    outline: 2px solid var(--color-badge-green);
+}
+
+.listing-form .price-symbol {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.listing-form .price-input-wrap .form-input {
+    padding-left: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* success / error banner (the "status" state in ListingForm) */
+.listing-form .form-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid;
+    animation: status-in 0.3s ease;
+}
+
+.listing-form .form-status--success {
+    background-color: var(--color-badge-green);
+    border-color: #b7d7bf;
+    color: var(--color-cta-green);
+}
+
+.listing-form .form-status--error {
+    background-color: #fef3f2;
+    border-color: #fecdca;
+    color: #b42318;
+}
+
+.listing-form .status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.listing-form .form-status--success .status-icon {
+    background-color: var(--color-cta-green);
+}
+
+.listing-form .form-status--error .status-icon {
+    background-color: #b42318;
+}
+
+.listing-form .status-message {
+    flex: 1;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.listing-form .status-link {
+    flex: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.listing-form .form-submit {
+    margin-top: 4px;
+    padding: 14px;
+    width: 100%;
+    background-color: var(--color-primary-green);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--color-white);
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.listing-form .form-submit:hover {
+    opacity: 0.9;
+}
+
+.listing-form .form-submit:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+@keyframes status-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .listing-form {
+        padding: 24px 20px;
+    }
+
+    .listing-form .form-row--3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .listing-form {
+        padding: 20px 16px;
+    }
+
+    .listing-form .form-row,
+    .listing-form .form-row--3 {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,49 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.form-field .form-label {
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 14px;
+}
+
+.form-field .form-hint {
+    color: var(--color-text-placeholder);
+    font-size: 12px;
+}
+
+/* red border + message when this field has a problem */
+.form-field .form-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #b42318;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.form-field .form-error::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #b42318;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.form-field.has-error .form-input,
+.form-field.has-error .form-select,
+.form-field.has-error .form-textarea,
+.form-field.has-error .price-input-wrap {
+    border-color: #d92d20;
+    background-color: #fffbfa;
+}
